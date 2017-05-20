@@ -1,0 +1,12 @@
+{
+  "public": {
+  },
+  "private": {
+    //given are example values
+
+    "username": "server@gmail.com",
+    "password": "3eeP1gtizk5eziohfervU",
+    "server": "smtp.gmail.com",
+    "port": 587
+  }
+}

@@ -1,0 +1,16 @@
+<template name="master_layout">
+
+    <div class="wrapper">
+
+        {{> nav_bar }}
+        {{> side_bar }}
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            {{> Template.dynamic template = content}}
+        </div>
+        <!-- /.content-wrapper -->
+        {{> footer }}
+
+    </div>
+
+</template>

@@ -1,0 +1,14 @@
+<template name="pharmacist_side_bar_links">
+
+    <li class="header">DASHBOARD</li>
+    <!-- Optionally, you can add icons to the links -->
+    <li class="{{#if isCustomerService}}active {{/if}}"><a href="#" id="customer_service_link">
+        <i class="fa fa-user"></i> <span>Customer Service</span></a>
+    </li>
+    <li class="{{#if isUpdateStocks}}active {{/if}}"><a href="#" id="update_stocks_link">
+        <i class="fa fa-exchange"></i> <span>Update Stocks</span></a>
+    </li>
+    <li class="{{#if isViewReports}}active {{/if}}"><a href="#" id="view_reports_link">
+        <i class="fa fa-book"></i> <span>View Reports</span></a></li>
+
+</template>

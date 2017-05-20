@@ -1,0 +1,73 @@
+<template name="user_management">
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            User Management
+            <small>create or edit users</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li class="active">User Management</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Your Page Content Here -->
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-4">
+                {{> Template.dynamic template = user_form data = user_data}}
+            </div>
+            <!-- /.col -->
+            <div class="col-md-8">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Registered Users</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="overflow-x: auto">
+                        {{#if Template.subscriptionsReady}}
+                            <table class="table table-bordered table-striped table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Pharmacy Name</th>
+                                    <th>Pharmacist's Name</th>
+                                    <th>Contact No</th>
+                                    <th>Status</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                {{#each users}}
+                                    {{>user_record}}
+                                {{/each}}
+
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <th>Pharmacy Name</th>
+                                    <th>Pharmacist's Name</th>
+                                    <th>Contact No</th>
+                                    <th>Status</th>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        {{else}}
+                            <div style="width: 100px; margin: 0 auto">
+                                <div class="loader-small"></div>
+                            </div>
+                        {{/if}}
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+
+</template>

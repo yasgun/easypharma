@@ -1,0 +1,16 @@
+<template name="api_user_record">
+    <tr id="single_api_user_record">
+        <td>{{user_name}}</td>
+        <td>{{subscription}}</td>
+        <td>{{email}}</td>
+        <td>
+
+            {{#if isActive}}
+                <span class="badge bg-green">ACTIVE</span>
+            {{else}}
+                <span class="badge bg-red">INACTIVE</span>
+            {{/if}}
+
+        </td>
+    </tr>
+</template>

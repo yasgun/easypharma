@@ -1,0 +1,18 @@
+<template name="stock_medicine">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <!-- small box -->
+        <div class="small-box bg-{{#if stock_medicine}}{{#if
+                stock_medicine.active}}{{#if
+                is_alerted}}red{{else}}{{stock_medicine.color}}{{/if}}{{else}}gray-active{{/if}}{{else}}gray{{/if}}">
+            <div class="inner">
+                <h4><b>{{medicine.general_name}}</b></h4>
+                <small>
+                    {{medicine.scientific_name}}
+                </small>
+            </div>
+            <a href="#" id="medicine_record" class="small-box-footer">{{#if stock_medicine}}
+                Update Medicine{{else}}Add Medicine{{/if}} <i
+                    class="fa fa-sliders"></i></a>
+        </div>
+    </div>
+</template>

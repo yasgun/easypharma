@@ -1,0 +1,59 @@
+<template name="create_user">
+
+    <!-- general form elements -->
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Register New User</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form role="form">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="inputPharmacistName">Pharmacist's Name</label>
+                    <input type="text" class="form-control" id="inputPharmacistName"
+                           placeholder="Enter pharmacist's name" name="inputPharmacistName">
+                </div>
+                <div class="form-group">
+                    <label for="inputPharmacyName">Pharmacy Name</label>
+                    <input type="text" class="form-control" id="inputPharmacyName"
+                           placeholder="Enter pharmacy name" name="inputPharmacyName" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputContactNo">Contact Number</label>
+                    <input type="text" class="form-control" id="inputContactNo"
+                           placeholder="Enter contact number" name="inputContactNo" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail"
+                           placeholder="Enter email" name="inputEmail" required>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <img id="img_preview" class="img-rounded" src="/dist/img/boxed-bg.jpg" width="50px" height="50px" style="margin-top: 5px">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                        <div class="form-group">
+                            <label for="inputImage">Profile Image</label>
+                            <input type="file" id="inputImage" name="inputImage" required>
+
+                            <p class="help-block" id="image_helper_block">Upload profile image.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+
+            <div class="box-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button id="submit" type="submit" class="btn btn-primary btn-block">Create</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- /.box -->
+
+</template>

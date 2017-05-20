@@ -1,0 +1,112 @@
+<template name="add_medicine">
+
+    <!-- general form elements -->
+    <div class="box {{#if add_medicine_green}}box-success{{/if}}{{#if add_medicine_yellow}}box-warning{{/if}}{{#if
+            add_medicine_blue}}box-info{{/if}}">
+        <div class="box-header with-border">
+            <h3 class="box-title">Add Medicine</h3>
+            <div class="box-tools pull-right">
+                <div class="btn-group-sm">
+                    <button id="add_medicine_green_btn" type="button"
+                            class="btn btn-success {{#if add_medicine_green}}active{{/if}}">G
+                    </button>
+                    <button id="add_medicine_yellow_btn" type="button"
+                            class="btn btn-warning {{#if add_medicine_yellow}}active{{/if}}">Y
+                    </button>
+                    <button id="add_medicine_blue_btn" type="button"
+                            class="btn btn-info {{#if add_medicine_blue}}active{{/if}}">B
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form role="form">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="inputGeneralName">General Name</label>
+                    <input type="text" class="form-control" id="inputGeneralName"
+                           placeholder="Enter general name" name="inputGeneralName" max="12" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputScientificName">Scientific Name</label>
+                    <input type="text" class="form-control" id="inputScientificName"
+                           placeholder="Enter scientific name" name="inputScientificName" max="20" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputUnitName">Unit Name</label>
+                    <input type="text" class="form-control" id="inputUnitName"
+                           placeholder="Enter unit name" name="inputUnitName" required>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class=" form-group">
+                            <label for="inputSellingPrice">Selling Price</label>
+                            <input type="number" class="form-control" id="inputSellingPrice"
+                                   placeholder="Unit price" name="inputSellingPrice" step=".01" min="0" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class=" form-group">
+                            <label for="inputAlertLevel">Alert Level</label>
+                            <input type="number" class="form-control" id="inputAlertLevel"
+                                   placeholder="Alert Level" name="inputAlertLevel" min="0" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputIntakeQuantity">Intake Quantity</label>
+                            <input type="number" class="form-control" id="inputIntakeQuantity"
+                                   placeholder="Intake quantity" name="inputIntakeQuantity" value="0" min="0" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class=" form-group">
+                            <label for="inputAmountPaid">Amount Paid</label>
+                            <input type="number" class="form-control" id="inputAmountPaid"
+                                   placeholder="Total paid"
+                                   name="inputAmountPaid" value="0" step=".01" min="0"
+                                   required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputReturnedQuantity">Returned Quantity</label>
+                            <input type="number" class="form-control" id="inputReturnedQuantity"
+                                   placeholder="Returned quantity" name="inputReturnedQuantity" value="0" min="0"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class=" form-group">
+                            <label for="inputAmountReceived">Amount Received</label>
+                            <input type="number" class="form-control" id="inputAmountReceived"
+                                   placeholder="Total received"
+                                   name="inputAmountReceived" value="0" step=".01" min="0"
+                                   required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+
+            <div class="box-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button id="submit" type="submit"
+                                class="btn {{#if add_medicine_green}}btn-success{{/if}} {{#if
+                                        add_medicine_yellow}}btn-warning{{/if}} {{#if
+                                        add_medicine_blue}}btn-info{{/if}} btn-block">Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- /.box -->
+
+</template>

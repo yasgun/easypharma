@@ -1,0 +1,16 @@
+<template name="user_record">
+    <tr id="single_user_record">
+        <td>{{profile.pharmacy_name}}</td>
+        <td>{{profile.pharmacist_name}}</td>
+        <td>{{profile.contact_no}}</td>
+        <td>
+
+            {{#if isActive}}
+                <span class="badge bg-green">ACTIVE</span>
+            {{else}}
+                <span class="badge bg-red">INACTIVE</span>
+            {{/if}}
+
+        </td>
+    </tr>
+</template>

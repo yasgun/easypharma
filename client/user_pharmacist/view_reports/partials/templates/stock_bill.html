@@ -1,0 +1,65 @@
+<template name="stock_bill">
+    <!-- general form elements -->
+    <div class="box {{#if medicine_green}}box-success{{/if}}{{#if medicine_yellow}}box-warning{{/if}}{{#if
+            medicine_blue}}box-info{{/if}}">
+        <div class="box-header with-border">
+            <h3 class="box-title">Stock Bill</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form role="form">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="inputGeneralName">General Name</label>
+                    <p>{{medicine.general_name}}</p>
+                </div>
+                <div class="form-group">
+                    <label for="inputScientificName">Scientific Name</label>
+                    <p>{{medicine.scientific_name}}</p>
+                </div>
+                <div class="form-group">
+                    <label for="inputUnitName">Unit Name</label>
+                    <p>{{medicine.unit_name}}</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputIntakeQuantity">Intake Quantity</label>
+                            <p>{{bill_record.quantity_in}}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class=" form-group">
+                            <label for="inputAmountPaid">Amount Paid</label>
+                            <p>{{bill_record.amount_paid}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputReturnedQuantity">Returned Quantity</label>
+                            <p>{{bill_record.quantity_out}}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class=" form-group">
+                            <label for="inputAmountReceived">Amount Received</label>
+                            <p>{{bill_record.amount_received}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+
+            <div class="box-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button id="close_button" type="button" class="btn btn-default btn-block">Close</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- /.box -->
+</template>

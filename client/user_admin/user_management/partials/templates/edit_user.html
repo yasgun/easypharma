@@ -1,0 +1,78 @@
+<template name="edit_user">
+
+    <!-- general form elements -->
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Edit User Details</h3>
+            <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
+                <div class="btn-group" data-toggle="btn-toggle">
+                    <button id="enable" type="button" class="btn btn-default btn-sm {{#if active}}active{{/if}}">
+                        <i class="fa fa-square text-green"></i>
+                    </button>
+                    <button id="disable" type="button"
+                            class="btn btn-default btn-sm {{#unless active}}active{{/unless}}">
+                        <i class="fa fa-square text-red"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form role="form">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="inputPharmacistName">Pharmacist's Name</label>
+                    <input type="text" class="form-control" id="inputPharmacistName"
+                           placeholder="Enter pharmacist's name" name="inputPharmacistName"
+                           value="{{user.profile.pharmacist_name}}" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputPharmacyName">Pharmacy Name</label>
+                    <input type="text" class="form-control" id="inputPharmacyName"
+                           placeholder="Enter pharmacy name" name="inputPharmacyName"
+                           value="{{user.profile.pharmacy_name}}" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputContactNo">Contact Number</label>
+                    <input type="text" class="form-control" id="inputContactNo"
+                           placeholder="Enter contact number" name="inputContactNo"
+                           value="{{user.profile.contact_no}}" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail"
+                           placeholder="Enter email" name="inputEmail" value="{{user.emails.[0].address}}"
+                           required>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <img id="img_preview" class="img-rounded" src="{{user.profile.image}}" width="50px"
+                             height="50px" style="margin-top: 5px">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                        <div class="form-group">
+                            <label for="inputImage">Profile Image</label>
+                            <input type="file" id="inputImage" name="inputImage">
+
+                            <p class="help-block" id="image_helper_block">Upload profile image.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+
+            <div class="box-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="hidden" id="userId" name="userId" value="{{user._id}}">
+                        <button id="submit" type="submit" class="btn btn-primary btn-block">Save</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="cancel_button" type="button" class="btn btn-default btn-block">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- /.box -->
+
+</template>

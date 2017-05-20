@@ -1,0 +1,74 @@
+<template name="customer_service">
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Customer Service
+            <small>create bills</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li class="active">Customer Service</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Your Page Content Here -->
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-xs-12">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12" style="padding-bottom: 20px">
+                                <div class="input-group input-group-md">
+                                    <input id="inputSearch" type="text" class="form-control"
+                                           placeholder="Enter medicine name">
+                                    <span class="input-group-btn">
+                                        <button id="search_btn" type="button" class="btn {{#if
+                                                search_update_stocks_medicine_green}}btn-success{{/if}}{{#if
+                                                search_update_stocks_medicine_yellow}}btn-warning{{/if}}{{#if
+                                                search_update_stocks_medicine_blue}}btn-info{{/if}}{{#if
+                                                search_update_stocks_medicine_all}}btn-default{{/if}} btn-flat">Search</button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-5 col-sm-5 col-xs-12" style="padding-bottom: 20px">
+                                <div class="btn-group-md">
+                                    <button id="search_update_stocks_medicine_green_btn" type="button"
+                                            class="btn btn-success {{#if
+                                                    search_update_stocks_medicine_green}}active{{/if}}">G
+                                    </button>
+                                    <button id="search_update_stocks_medicine_yellow_btn" type="button"
+                                            class="btn btn-warning {{#if
+                                                    search_update_stocks_medicine_yellow}}active{{/if}}">Y
+                                    </button>
+                                    <button id="search_update_stocks_medicine_blue_btn" type="button"
+                                            class="btn btn-info {{#if
+                                                    search_update_stocks_medicine_blue}}active{{/if}}">B
+                                    </button>
+                                    <button id="search_update_stocks_medicine_all_btn" type="button"
+                                            class="btn btn-default {{#if
+                                                    search_update_stocks_medicine_all}}active{{/if}}">ALL
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    {{#each medicines}}
+                        {{> bill_medicine}}
+                    {{/each}}
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-xs-12">
+                {{> Template.dynamic template = bill_form data=bill_data}}
+                {{> current_bill}}
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+
+</template>

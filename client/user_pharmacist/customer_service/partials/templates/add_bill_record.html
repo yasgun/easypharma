@@ -1,0 +1,79 @@
+<template name="add_bill_record">
+
+    <!-- general form elements -->
+    <div class="box {{#if medicine_green}}box-success{{/if}}{{#if medicine_yellow}}box-warning{{/if}}{{#if
+            medicine_blue}}box-info{{/if}}">
+        <div class="box-header with-border">
+            <h3 class="box-title">Add Item</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form role="form">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="inputGeneralName">General Name</label>
+                    <input type="text" class="form-control" id="inputGeneralName" value="{{medicine.general_name}}"
+                           readonly>
+                </div>
+                <div class="form-group">
+                    <label for="inputScientificName">Scientific Name</label>
+                    <input type="text" class="form-control" id="inputScientificName"
+                           value="{{medicine.scientific_name}}" readonly>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputUnitName">Unit Name</label>
+                            <input type="text" class="form-control" id="inputUnitName" value="{{medicine.unit_name}}"
+                                   readonly>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputAvailableQuantity">Available Quantity</label>
+                            <input type="text" class="form-control" id="inputAvailableQuantity"
+                                   value="{{stock_medicine.quantity}}"
+                                   readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class=" form-group">
+                            <label for="inputSellingPrice">Selling Price</label>
+                            <input type="text" class="form-control" id="inputSellingPrice"
+                                   value="{{stock_medicine.selling_price}}"
+                                   readonly>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputQuantity">Quantity</label>
+                            <input type="number" class="form-control" id="inputQuantity"
+                                   placeholder="Quantity" name="inputQuantity" value="0" min="0"
+                                   max="{{stock_medicine.quantity}}" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+
+            <div class="box-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button id="submit" type="submit"
+                                class="btn {{#if medicine_green}}btn-success{{/if}} {{#if
+                                        medicine_yellow}}btn-warning{{/if}} {{#if
+                                        medicine_blue}}btn-info{{/if}} btn-block">Add
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="cancel_btn" type="button" class="btn btn-default btn-block">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- /.box -->
+
+</template>

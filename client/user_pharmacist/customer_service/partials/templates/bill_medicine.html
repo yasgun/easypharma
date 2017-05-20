@@ -1,0 +1,18 @@
+<template name="bill_medicine">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <!-- small box -->
+        <div class="small-box bg-{{#if stock_medicine}}{{#if
+                stock_medicine.active}}{{stock_medicine.color}}{{else}}gray-active{{/if}}{{else}}gray{{/if}}">
+            <div class="inner">
+                <h4><b>{{medicine.general_name}}</b></h4>
+                <small>
+                    {{medicine.scientific_name}}
+                </small>
+            </div>
+            <a href="#" id="medicine_record" class="small-box-footer">
+                Add Medicine
+                <i class="fa fa-shopping-cart"></i>
+            </a>
+        </div>
+    </div>
+</template>

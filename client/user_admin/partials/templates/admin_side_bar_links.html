@@ -1,0 +1,11 @@
+<template name="admin_side_bar_links">
+
+    <li class="header">DASHBOARD</li>
+    <!-- Optionally, you can add icons to the links -->
+    <li class="{{#if isUserManagement}}active {{/if}}"><a href="#" id="user_management_link"><i class="fa fa-user"></i>
+        <span>User Management</span></a></li>
+    <li class="{{#if isAPIManagement}}active {{/if}}"><a href="#" id="api_management_link"><i class="fa fa-link"></i>
+        <span>API Management</span></a>
+    </li>
+
+</template>

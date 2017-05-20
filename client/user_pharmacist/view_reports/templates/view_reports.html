@@ -1,0 +1,155 @@
+<template name="view_reports">
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            View Reports
+            <small>generate reports</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li class="active">View Reports</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Your Page Content Here -->
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-xs-12">
+                <form role="form" class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-bottom: 20px">
+                                <div class="input-group input-group-md date">
+                                    <div class="input-group-addon">
+                                        Begin
+                                    </div>
+                                    <input id="inputBegin" name="inputBegin" type="date" class="form-control"
+                                           placeholder="Enter beginning date" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-bottom: 20px">
+                                <div class="input-group input-group-md date">
+                                    <div class="input-group-addon">
+                                        End
+                                    </div>
+                                    <input id="inputEnd" name="inputEnd" type="date" class="form-control"
+                                           placeholder="Enter ending date" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <button id="submit" type="submit"
+                                        class="btn btn-success btn-block">Filter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="box box-success">
+                            <div class="box-header">
+                                <h3 class="box-title">Customer Bills</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body" style="overflow-x: auto">
+                                {{#if Template.subscriptionsReady}}
+                                    {{#if customer_bills}}
+                                        <table class="table table-bordered table-striped table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>Issued Date</th>
+                                                <th>Amount</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            {{#each customer_bills}}
+                                                {{>customer_bill_record}}
+                                            {{/each}}
+
+                                            </tbody>
+                                        </table>
+                                    {{else}}
+                                        <h4 align="center">No Records Found</h4>
+                                        <h5 align="center">Date range does not contain any related record</h5>
+                                    {{/if}}
+                                {{else}}
+                                    <div style="width: 100px; margin: 0 auto">
+                                        <div class="loader-small"></div>
+                                    </div>
+                                {{/if}}
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-6">
+                        <div class="box box-success">
+                            <div class="box-header">
+                                <h3 class="box-title">Stock Bills</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body" style="overflow-x: auto">
+                                {{#if Template.subscriptionsReady}}
+                                    {{#if stock_bills}}
+                                        <table class="table table-bordered table-striped table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>Issued Date</th>
+                                                <th>Paid</th>
+                                                <th>Received</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            {{#each stock_bills}}
+                                                {{>stock_bill_record}}
+                                            {{/each}}
+
+                                            </tbody>
+                                        </table>
+                                    {{else}}
+                                        <h4 align="center">No Records Found</h4>
+                                        <h5 align="center">Date range does not contain any related record</h5>
+                                    {{/if}}
+                                {{else}}
+                                    <div style="width: 100px; margin: 0 auto">
+                                        <div class="loader-small"></div>
+                                    </div>
+                                {{/if}}
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-xs-12">
+                <!-- DONUT CHART -->
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Summary</h3>
+                    </div>
+                    <div class="box-body">
+                        <canvas id="pieChart" style="height:250px"></canvas>
+                        {{#unless is_range_set}}
+                            <h4 align="center">Date Range is not selected</h4>
+                            <h5 align="center">Please select a date range to view summary</h5>
+                        {{/unless}}
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+
+                {{> Template.dynamic template = bill_view data=bill_data}}
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+
+</template>

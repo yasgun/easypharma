@@ -1,0 +1,62 @@
+<template name="current_bill">
+    <div class="box box-primary">
+        <div class="box-header">
+            <h3 class="box-title">Current Bill</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body" style="overflow-x: auto">
+            {{#if Template.subscriptionsReady}}
+                {{#if bill_records}}
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>Medicine</th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {{#each bill_records}}
+                            {{>bill_record}}
+                        {{/each}}
+
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th></th>
+                            <th>Total</th>
+                            <th>{{bill.total}}</th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                {{else}}
+                    <h4 align="center">Waiting for Customer Request</h4>
+                    <h5 align="center">Current bill is empty</h5>
+                {{/if}}
+            {{else}}
+                <div style="width: 100px; margin: 0 auto">
+                    <div class="loader-small"></div>
+                </div>
+            {{/if}}
+        </div>
+        <!-- /.box-body -->
+        {{#if bill_records}}
+            <div class="box-footer">
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <button id="submit" type="submit"
+                                class="btn btn-primary btn-block">Checkout
+                        </button>
+
+                    </div>
+                    <div class="col-md-6">
+                        <button id="discard_btn" type="button" class="btn btn-default btn-block">Discard</button>
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+    <!-- /.box -->
+</template>
