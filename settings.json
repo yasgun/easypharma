@@ -1,0 +1,10 @@
+{
+  "public": {
+  },
+  "private": {
+    "username": "rusiruyasasgunarathne@gmail.com",
+    "password": "iqudhgjfyjaagszz",
+    "server": "smtp.gmail.com",
+    "port": 587
+  }
+}
