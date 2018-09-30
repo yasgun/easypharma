@@ -1,4 +1,4 @@
-# About EasyPhrma
+# About EasyPharma
 A user friendly web based inventory and purchase management system for pharmacies, comes along with an API that supports connecting external parties to the system for sharing useful information.
 
 ## Installation
