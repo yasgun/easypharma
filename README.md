@@ -1,4 +1,5 @@
 # About EasyPharma
+[![Build Status](https://travis-ci.org/yasgun/easypharma.svg?branch=master)](https://travis-ci.org/yasgun/easypharma)
 A user friendly web based inventory and purchase management system for pharmacies, comes along with an API that supports connecting external parties to the system for sharing useful information.
 
 ## Installation
