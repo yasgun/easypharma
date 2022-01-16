@@ -84,28 +84,6 @@ The project tree is set up as follows:
   </tr>
 </table>
 
-## Demo
-
-Access the Heroku hosted demo through this [link](https://easypharma-demo.herokuapp.com).
-
-<table>
- <tr>
-  <th>User</td>
-  <th>Email</td>
-  <th>Password</td>
- </tr>
- <tr>
-  <td>Administrator</td>
-  <td>rusiruyasasgunarathne@gmail.com</td>
-  <td>123456</td>
- </tr>
- <tr>
-   <td>Pharmacist</td>
-   <td>yasasgunarathne@gmail.com</td>
-   <td>123456</td>
-  </tr>
-</table>
-
 ## License
 
 Copyright ©  2017 Yasas Gunarathne
